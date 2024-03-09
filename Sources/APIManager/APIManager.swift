@@ -24,7 +24,7 @@ public class APIManager {
         self.jsonRootKey = jsonRootKey
     }
     
-    public func initializeRequest(with headers: [String: String]? = nil, and requestBody: [String: Any]?) async -> APIURLResponse<Any, HTTPURLResponse> {
+    public func initializeRequest(with headers: [String: String]? = nil, and requestBody: [String: Any]?) async -> APIURLResponse<Data, HTTPURLResponse> {
         
         if let headers {
             headers.forEach( { key, value in
@@ -94,6 +94,11 @@ public class APIManager {
             return .failure(error)
         }
         
+    }
+    
+    public static func makeRequest(_ requestMethod: APIRequestMethod, withURL url: URL, headers: [String: String]?, requestBody: [String: Any]?) async -> APIURLResponse<Data, HTTPURLResponse> {
+        let request = APIManager(url: url, requestMethod: requestMethod)
+        return await request.initializeRequest(with: headers, and: requestBody)
     }
     
 }
