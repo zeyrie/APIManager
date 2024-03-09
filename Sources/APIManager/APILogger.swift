@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import os.log
 
 class APILogger {
+    
+    static let shared = Logger(subsystem: "APIManager", category: "APILogger")
     
 }
