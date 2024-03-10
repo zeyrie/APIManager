@@ -43,15 +43,15 @@ public enum APINetworkError: Error {
 }
 
 public enum APIErrorStatus {
-    static let internalError = "INTERNAL_ERROR"
-    static let invalidOperation = "INVALID_OPERATION"
-    static let noInternetConnection = "NO_INTERNET_CONNECTION"
-    static let requestTimeout = "REQUEST_TIMEOUT"
-    static let networkConnectionLost = "NETWORK_CONNECTION_LOST"
-    static let hostNotFound = "HOST_NOT_FOUND"
-    static let cannotConnectToHost = "CANNOT_CONNECT_TO_HOST"
-    static let responseNil = "RESPONSE_NIL"
-    static let urlNotFound = "URL_NOT_FOUND"
+    public static let internalError = "INTERNAL_ERROR"
+    public static let invalidOperation = "INVALID_OPERATION"
+    public static let noInternetConnection = "NO_INTERNET_CONNECTION"
+    public static let requestTimeout = "REQUEST_TIMEOUT"
+    public static let networkConnectionLost = "NETWORK_CONNECTION_LOST"
+    public static let hostNotFound = "HOST_NOT_FOUND"
+    public static let cannotConnectToHost = "CANNOT_CONNECT_TO_HOST"
+    public static let responseNil = "RESPONSE_NIL"
+    public static let urlNotFound = "URL_NOT_FOUND"
 }
 
 func convertURLSessionErrorToAPIError(_ error: Error) -> APINetworkError {
