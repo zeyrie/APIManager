@@ -10,7 +10,7 @@ public class APIManager {
     private static let session = URLSession(configuration: configuration)
     
     private var url: URL?
-    private var requestMethod: APIRequestMethod = .undefined
+    private var requestMethod: APIRequestMethod = .UNDEFINED
     private var headers = [String: String]()
     private var jsonRootKey = String()
     private var requestBody: Any?
@@ -60,7 +60,7 @@ public class APIManager {
         
         urlRequest = URLRequest(url: url)
         
-        guard requestMethod == .undefined else {
+        guard requestMethod == .UNDEFINED else {
             APILogger.shared.error("\(APIErrorStatus.invalidOperation) - Invalid Request Method")
             return .invalidError(status: APIErrorStatus.invalidOperation, message: "Invalid Request Method", info: nil)
         }
