@@ -4,5 +4,5 @@ Use this API Manager Swift Package to hit APIs
 
 To hit a request call the =makeRequest()= function along with the required functions which will return a =Result<Data, HTTPURLResponse>= data type. 
 
-You could also initialize the APIManager with the required params and then call the =initializeRequest()= method to hit the API which also return the same data type as =makeRequest()=
+You could also initialize the APIManager with the required params and then call the =initializeRequest()= method to hit the API which also returns the same data type as =makeRequest()=
 
