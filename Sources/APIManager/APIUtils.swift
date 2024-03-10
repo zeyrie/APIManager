@@ -9,13 +9,13 @@ import Foundation
 
 public enum APIRequestMethod: String {
     
-    case get = "GET"
-    case post = "POST"
-    case patch = "PATCH"
-    case put = "PUT"
-    case delete = "DELETE"
+    case GET
+    case POST
+    case PATCH
+    case PUT
+    case DELETE
     // TODO: Is this needed?
-    case undefined = "UNDEFINED"
+    case UNDEFINED
     
 }
 
