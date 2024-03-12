@@ -60,7 +60,7 @@ public class APIManager {
         
         urlRequest = URLRequest(url: url)
         
-        guard requestMethod == .UNDEFINED else {
+        guard requestMethod != .UNDEFINED else {
             APILogger.shared.error("\(APIErrorStatus.invalidOperation) - Invalid Request Method")
             return .invalidError(status: APIErrorStatus.invalidOperation, message: "Invalid Request Method", info: nil)
         }
