@@ -140,7 +140,6 @@ public class APIManager {
                 case .failure(let error):
                     continuation.resume(returning: .failure(error))
                 }
-                continuation.resume(returning: response)
             }
             task.resume()
         }
