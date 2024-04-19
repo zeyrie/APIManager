@@ -42,6 +42,7 @@ extension URLSession {
             if let error {
                 APILogger.shared.error("\(error)")
                 completionHandler(.failure(convertURLSessionErrorToAPIError(error)))
+                return
             }
             
             guard let url = tempURL else {
