@@ -134,6 +134,12 @@ public class APIManager {
         
         return await withCheckedContinuation { continuation in
             let task = APIManager.session.downloadTask(with: urlRequest) { response in
+                switch response {
+                case .success(let url, let response):
+                    continuation.resume(returning: .success(url, response))
+                case .failure(let error):
+                    continuation.resume(returning: .failure(error))
+                }
                 continuation.resume(returning: response)
             }
             task.resume()
