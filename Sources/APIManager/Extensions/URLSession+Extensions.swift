@@ -37,7 +37,7 @@ extension URLSession {
         }
     }
     
-    func downloadTask(with request: URLRequest, completionHandler: @escaping (APIURLResponse<Any, HTTPURLResponse>) -> Void) -> URLSessionDownloadTask {
+    func downloadTask(with request: URLRequest, completionHandler: @escaping (APIURLResponse<URL, HTTPURLResponse>) -> Void) -> URLSessionDownloadTask {
         return downloadTask(with: request) { (tempURL, response, error) in
             if let error {
                 APILogger.shared.error("\(error)")
